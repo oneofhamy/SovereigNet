@@ -9,7 +9,7 @@
 │   ├── architecture.md            # System design overview
 │   ├── governance.md              # Voting and proposal system design
 │   └── proof-of-humanity.md       # ZK + PoH integration design
-
+│
 ├── /contracts/                    # Smart contracts (Solidity / Rust etc.)
 │   ├── README.md
 │   ├── Voting/
@@ -29,7 +29,7 @@
 │   └── Identity/
 │       ├── ZKProofVerifier.sol
 │       └── PoHRegistry.sol
-
+│
 ├── /frontend/                     # Web interface and dApp
 │   ├── /src/
 │   │   ├── index.html
@@ -51,7 +51,7 @@
 │   │       └── ipfsUtils.ts
 │   └── /public/
 │       └── icons, logos, favicon, etc.
-
+│
 ├── /p2p-network/                  # Peer-to-peer node infrastructure
 │   ├── README.md
 │   ├── ipfs-node-setup.md
@@ -59,7 +59,7 @@
 │   ├── message-protocol.ts
 │   ├── content-routing.ts
 │   └── encryption-layer.ts
-
+│
 ├── /proof-of-humanity/           # ZK Proof system
 │   ├── circuits/
 │   │   ├── poh.zok
@@ -69,26 +69,26 @@
 │   │   └── verifyProof.ts
 │   └── test/
 │       └── poh.test.ts
-
+│
 ├── /governance/                  # DAO tools, voting engine
 │   ├── quadratic-voting.ts
 │   ├── bracket-elimination.ts
 │   ├── rewards-distributor.ts
 │   ├── audit-logger.ts
 │   └── validator-utils.ts
-
+│
 ├── /cli-tools/                   # Developer CLI, utilities
 │   ├── sovereign-cli.ts
 │   ├── proposal-submit.ts
 │   ├── zk-register.ts
 │   └── vote-analyze.ts
-
+│
 ├── /defi-integration/            # Liquidity, staking, DeFi protocols
 │   ├── liquidity-pools.md
 │   ├── defi-hooks.ts
 │   ├── staking-contract.ts
 │   └── reward-metrics.ts
-
+│
 ├── /tests/                       # Unit + integration tests
 │   ├── frontend/
 │   │   └── App.test.tsx
@@ -97,17 +97,17 @@
 │   │   └── Treasury.test.ts
 │   └── governance/
 │       └── QuadraticVoting.test.ts
-
+│
 ├── /scripts/                     # Deployment and migration scripts
 │   ├── deployContracts.ts
 │   ├── setupGenesis.ts
 │   └── migration.md
-
+│
 ├── /static/                      # Static media, docs, assets
 │   ├── whitepaper.pdf
 │   ├── logo.svg
 │   └── diagrams/
-
+│
 ├── .env                          # Environment variables
 ├── .gitignore
 ├── README.md
