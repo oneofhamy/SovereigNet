@@ -71,33 +71,208 @@ Privacy and security are foundational to SovereigNet. These are some of the crit
 
 **Decentralized Identity:** Users control their identities through decentralized identifiers (DIDs) on the blockchain, ensuring full ownership of their online personas. Identity verification can be done using various methods (e.g., mobile number verification, social media integrations, or biometrics) while keeping the underlying information private.
 
-## 5. **Governance Model**
+## 5. **Governance System Design**
 
-The governance of SovereigNet is fully decentralized, allowing the community to have a direct say in decisions related to platform updates, feature implementations, and even moderation practices.
+SovereigNet’s governance model is fully decentralized, empowering the community to make platform-wide decisions regarding development, moderation, elections, funding, and upgrades. This governance system is carefully engineered to prevent manipulation, promote transparency, and reflect true community consensus while rewarding participation.
 
-Key elements of the governance system include:
+### **A. Governance Structure and Principles**
 
-**Quadratic Voting:** Instead of a one-person-one-vote system, SovereigNet employs quadratic voting, where the cost of additional votes increases quadratically. This system gives more weight to users with stronger preferences without allowing wealthier users to dominate decisions.
+Quadratic Voting: Instead of a simple one-person-one-vote approach, SovereigNet utilizes quadratic voting, where the cost of additional votes increases quadratically. This ensures that users can express stronger preferences without enabling the wealthy to dominate outcomes.
 
-**Proposal-Based Governance:** Users can submit proposals for changes or new features, which the community votes on. These proposals can be for technical changes (e.g., protocol upgrades), community policies (e.g., content moderation), or funding allocations (e.g., treasury spending).
+**Proposal-Based Governance**: Any user may submit proposals for technical upgrades, new features, content policy changes, or treasury spending. All proposals follow a multi-stage review and voting process to ensure transparency and legitimacy.
 
-**Community Moderation:** Content moderation is decentralized, with users having the ability to report inappropriate content or behaviors. Votes on moderation issues are handled by the community, ensuring that the platform remains self-regulating and accountable to its users.
+**Community Moderation**: Moderation policies and enforcement are governed by the community using stake-agnostic reviews, reputation-weighted decision pools, and public audit trails.
 
-## 6. **Reward Token and DeFi Integration**
-SovereigNet’s native reward token incentivizes user participation in governance, content creation, and moderation. The reward token has several uses:
+**Treasury Management**: Reward token taxes are funneled into a decentralized treasury governed by DAO proposals and quadratic voting, with safeguards including milestone-based disbursement and multi-signature authorization.
 
-**Staking:** Users can stake their reward tokens to signal support for proposals, candidates, or network upgrades. Staking rewards are given for active participation in governance and voting.
+### **B. Proposal Lifecycle and Election Protocol**
 
-**DeFi Mechanisms:** The reward token can be used in decentralized finance applications, such as liquidity pools and yield farming. Users who provide liquidity to the platform can earn additional rewards, strengthening the overall ecosystem.
+**Step 1: Nomination Stage**
 
-**Marketplace:** Users can spend reward tokens on premium services, such as accessing exclusive content, boosting their content visibility, or purchasing other in-platform utilities.
+Any verified user can nominate themselves or be nominated by others. To advance, a candidate must receive endorsements from a minimum percentage of verified users (e.g., 5–10%), and also ratify their endorsement if they didn't nominate themselves. Nomination does **not** depend on token staking or voting weights. Reviewers earn $SVR by participating in nomination discussions or evaluating candidate materials.
 
-## 7. **Content and Moderation**
-SovereigNet employs a decentralized content moderation system where users participate in reporting, voting, and reviewing flagged content. Features include:
+**Step 2: Primary Voting (Quadratic)**
+
+All voters receive a fixed number of credits to spend on candidates or proposals. Votes follow a quadratic cost model:
+
+**1 vote = 1 point**
+
+**2 votes = 4 points**
+
+**3 votes = 9 points**
+
+Voting is private until the round closes. This mitigates strategic voting and bandwagon behavior. All participants receive $SVR incentives to encourage turnout and reward civic engagement.
+
+**Step 3: Runoff Voting (Final Round)**
+
+If no candidate or proposal reaches the required threshold (e.g., 40% approval), the top 4–8 finalists move to a runoff round. A new round of voting is held with doubled rewards for participants. The winner is determined by total quadratic score.
+
+### **C. Voting Integrity and Safeguards**
+
+**Secret Ballots**: Votes are kept concealed during elections to prevent manipulation.
+
+**Randomized Ballot Order**: Candidate/proposal listings are randomized per voter to eliminate ordering bias.
+
+**Immutable Record**: After each round, anonymized vote data is published on-chain for public audit.
+
+**No Live Totals**: Real-time voting results are hidden to prevent strategic or reactionary behavior.
+
+**Fixed Voting Cost**: Voting credits are issued equally and do not scale with token holdings or wealth.
+
+### **D. Community Treasury and Taxation**
+
+**1. Tax Mechanism**
+
+All $SVR reward payouts are subject to a small tax (1–5%) which is redirected to the Community Treasury. This ensures that platform operations and growth is continuously funded without external dependence.
+
+
+**2. Treasury Proposal System**
+
+Proposals for funding allocation must come from PoH-verified users. Approved proposals must pass through community voting, undergo security review, and include a public audit trail. Disbursement occurs in milestones, with DAO-verified completion before payout.
+
+
+**3. Security and Transparency**
+
+Multi-signature wallets are used to control large or sensitive disbursements. DAO members may initiate an emergency freeze vote in the case of a malicious or faulty proposal. All financial activity is recorded on-chain and viewable through public dashboards.
+
+### **E. Specialized Roles and Governance Dynamics**
+
+Governance encompasses non-developer roles such as:
+
+- Moderators
+- Auditors
+- Treasurers
+- Validators
+
+These positions are elected quarterly using the same nomination and quadratic voting lifecycle. Role holders are subject to term limits, reputation tracking, and public accountability dashboards. Reputation pools and on-chain credentials help match the most trusted and skilled users to essential governance functions.
+
+## 6. **Token Utility and DeFi Integration**
+
+SovereigNet's native reward token and its broader decentralized finance (DeFi) integrations form the economic engine of the platform. These systems are designed not only to incentivize participation but to ensure long-term sustainability and user ownership of the ecosystem.
+
+### **A. Token Use Cases and Utility**
+
+SovereigNet introduces three distinct tokens to support various functions (names subject to change):
+
+- $SVR (Sovereign Token)	Primary utility and reward token for participation and incentives
+- $GOV (Governance Token)	Used exclusively for DAO voting, treasury proposals, and governance
+- $UTIL (Utility Coin)	Used for internal microtransactions, content boosts, and tipping
+
+Each token is minted according to strict community-approved issuance rules encoded in smart contracts.
+
+### **B. $SVR Reward Token Features**
+
+Earned through:
+
+- Content creation and engagement
+- Content moderation and reviewing
+- Participating in votes and elections
+- Verifying identities in the PoH system
+
+Automatically taxed (1–5%) to fund the Community Chest treasury
+
+Can be used to:
+
+- Back proposals or candidates (signaling support, not weighting)
+- Stake in DeFi yield opportunities
+- Purchase in-platform services (visibility boosts, content pinning, premium channels)
+
+### **C. DeFi Mechanisms for $SVR**
+
+SovereigNet connects the reward economy to external value through DeFi integrations:
+
+**1. Liquidity Pools**
+
+Users can pair $SVR with ETH, USDT, or stablecoins on decentralized exchanges (DEXs) like Uniswap or PancakeSwap. Liquidity providers (LPs) earn swap fees and bonus $SVR or $GOV incentives through governance grants The initial liquidity pool is bootstrapped using DAO-approved treasury seeding.
+
+**2. Staking and Yield Farming**
+
+$SVR holders may stake tokens into verified smart contracts or third-party DeFi protocols.
+
+Stakers receive:
+
+- Additional $SVR or $GOV
+- Multiplier bonuses for participation in governance and elections
+- Governance eligibility for advanced DAO roles
+
+### **D. DAO-Tied Treasury Growth**
+
+SovereigNet’s treasury is not passive, it actively grows through DAO-sanctioned DeFi strategies. Idle funds are deployed in low-risk protocols (e.g., lending, staking).
+
+All yield strategies are proposed and voted on publicly, audited before execution, and continuously monitored via smart contracts.
+
+Emergency rollback and freeze options are always available by DAO vote.
+
+### **E. Ecosystem Benefits of Integration**
+
+Ties economic participation directly to platform growth rather than speculation. Long-term LP rewards reduce token volatility and create deeper liquidity for new users. Governance-token incentives align financial and governance interests, preventing centralization by silent whales. Internal $UTIL usage reduces friction for content monetization, visibility, and tipping.
+
+## 7. **Content Moderation and Community Oversight**
+
+SovereigNet replaces corporate-style moderation teams with a decentralized system of community-driven oversight, rooted in transparency, cryptographic accountability, and reputation-weighted review processes. Every aspect of content curation, enforcement, and reporting is governed by the users who participate in and shape the platform.
+
+### **A. Decentralized Moderation Framework**
+
+Content moderation on SovereigNet is governed by three main principles:
+
+1. **Transparency** – Every moderation action is recorded publicly on-chain or through verifiable audit trails.
+
+2. **Decentralization** – There is no central moderator; instead, verified community members review flagged content.
+
+3. **Merit-Based Influence** – User reputation directly affects review eligibility and reward scaling.
+
+### **B. Community Reporting System**
+
+Any user may report harmful or rule-breaking content through a public interface. Reports are batched and assigned to randomly selected reviewer pools drawn from PoH-verified users with relevant reputational standing. Moderators follow community-ratified guidelines. These are public, version-controlled, and voted on via DAO.
+
+### **C. Reviewer Pools and Consensus Resolution**
+
+Reviewer pools evaluate content in parallel. A decision requires consensus from a majority of independent reviewers. Once consensus is reached, the content remains discoverable (if approved), or is delisted by removing its content hash from the indexing contracts (if rejected).
+
+**Note:** Delisting does not erase content from the network—users may still query and retrieve it directly.
+
+### **D. Incentives and Reputation Dynamics**
+
+**1. Positive Reinforcement, Contribution-Based Action Reward Table**
+
+| **Action**                              | **Reward Mechanism**                                      |
+|-----------------------------------------|------------------------------------------------------------|
+| Submit a proposal                       | $SVR reward based on engagement metrics and upvotes        |
+| Review a candidate or proposal profile  | Flat $SVR reward for each review completed                 |
+| Participate in discussion threads       | $SVR per upvoted comment marked as constructive            |
+| Vote in elections or referenda          | $SVR base reward + 2× bonus during runoff rounds           |
+| Moderate flagged content                | $SVR with accuracy-based multipliers and reputation bonuses|
+| Verify new users in PoH system          | $SVR reward and reputation increase for valid verifications|
+| Report harmful content (accurately)     | $SVR bonus if community reviewers validate the report      |
+| Host or relay encrypted messages        | Optional $SVR node reward (governance controlled)          |
+| Stake $SVR in governance proposals      | Eligibility for influence bonus and DAO participation tiers|
+
+**2. Penalty Systems**
+
+False Flagging or malicious reporting can trigger staking loss and reputation score slashing. Inactivity in reviewer roles over time leads to automatic demotion from moderator eligibility pools.
+
+
+### E. **Reputation System Overview**
+
+Each address on SovereigNet accumulates non-transferable reputation tokens based on voting accuracy (agreement with broader community), proposal history and quality, moderation accuracy and engagement and conflict resolution participation.
+
+**This score governs:**
+
+- Access to sensitive governance roles
+- Reviewer eligibility
+- Weight in non-voting influence (e.g., delegation, mentorship)
+
+### **F. Platform Tools for Oversight**
+
+**Content Transparency Logs:** Allow users to trace every moderation action with justification and vote record.
+
+**Dispute Mechanism:** Users may appeal decisions by submitting their case to a DAO-funded arbitration pool.
+
+**Policy Update Proposals:** Community can propose and vote on changes to moderation rules, guidelines, or reporting thresholds.
 
 **Community Reports:** Users can flag inappropriate or harmful content. These reports are sent to the community for voting, ensuring that the content moderation process is transparent and democratic.
 
-**Incentivized Content Creation:** Content creators earn reward tokens based on engagement, upvotes, and quality assessments by the community. Users can also earn rewards for moderating content and reviewing proposals.
+**Incentivized ContenCreation:** Content creators earn reward tokens based on engagement, upvotes, and quality assessments by the community. Users can also earn rewards for moderating content and reviewing proposals.
 
 **Reputation System:** Each user has a reputation score based on their activity, voting, and community contributions. Users with higher reputation scores are given more weight in governance and moderation decisions.
 
@@ -183,69 +358,7 @@ SovereigNet’s privacy-preserving Proof of Humanity system is a core component 
 - No personally identifiable information (PII) is stored on-chain.
 - The protocol uses Merkle trees, blind signatures, and commitment schemes to enforce uniqueness without linking proof to any real-world identity.
 
-## 10. **Governance System Design**
-
-SovereigNet’s governance is structured to promote direct democracy, reduce strategic voting, and discourage traditional political campaigning.
-
-### **A. Election Protocols**
-
-**Step 1: Nomination Stage**
-
-- Anyone can nominate themselves or be nominated by others.
-- A candidate must reach a minimum nomination threshold (e.g., 5–10% of users) to advance.
-- Nominations are not influenced by stake or quadratic weights.
-- Reward tokens are distributed to users who review nominee profiles or participate in platform discussions.
-
-**Step 2: Primary Voting (Quadratic Voting)**
-
-- Users receive a fixed number of voting credits.
-- They assign votes using quadratic cost scaling:
-   - 1 vote = 1 point
-   - 2 votes = 4 points
-   - 3 votes = 9 points
-- Voters are not allowed to see live vote totals. Votes are concealed during the election period and revealed at the end.
-- Participation is rewarded with token incentives to reduce fatigue.
-
-**Step 3: Runoff Voting (Quadratic)**
-
-- If no candidate reaches the required approval threshold (e.g., 40%), the top 4–8 are selected.
-- Another round of quadratic voting occurs, with doubled voter rewards.
-- Final vote totals determine the winner.
-
-### **B. Voting Safeguards**
-
-- Votes are publicly published post-election (anonymously).
-- Lists of candidates are randomized per user to prevent ordering bias.
-- Strategic approval is mitigated via secret ballots and fixed vote costs.
-- All governance and vote data is immutably published on-chain.
-
-### **C. Treasury & Taxation System (Community Chest)**
-
-**1. Tax Mechanism**
-
-- A small tax (1–5%) is taken from all reward token earnings and funneled into a decentralized treasury.
-- This rate is adjustable through governance.
-
-**2. Treasury Governance**
-
-- Proposals for spending are submitted by verified users.
-- Proposals require quadratic voting and a security audit before automatic enactment.
-- All fund allocations are public and immutable.
-
-**3. Safeguards**
-
-- Multi-signature approval required for major disbursements.
-- Milestone-based payout with on-chain proof of completion.
-- Emergency rollback/freeze available if a malicious proposal passes.
-
-### **D. Specialized Roles & Election Review**
-
-- Roles such as moderators, auditors, treasurers, and validators are elected quarterly.
-- Yearly term-limits and reputation tracking ensure accountability.
-- Role nomination follows the same 3-step process as governance voting.
-- Reputation pools and verified skillsets help match qualified candidates to responsibilities.
-
-## 11. **Decentralized Content Architecture**
+## 10. **Decentralized Content Architecture**
 
 SovereigNet is built to replace the centralized model of social media with a fully encrypted, censorship-resistant communication system. The platform enables users to create, share, and discover content through a distributed network that requires no central authority.
 
@@ -268,86 +381,48 @@ SovereigNet is built to replace the centralized model of social media with a ful
 - Group chats or channels are replicated across voluntary relay nodes.
 - Messages are ephemeral unless pinned or archived by the recipient.
 
-## 12. **Community Moderation and Discussion**
+## 11. **Tokenomics and Incentive Ecosystem**
 
-SovereigNet rejects corporate-style moderation teams and replaces them with a decentralized system of consensus and trust-based incentives.
+SovereigNet’s token economy is built on principles of fairness, transparency, and community contribution. Its design rewards meaningful engagement rather than speculation or manipulation, ensuring long-term sustainability, active governance, and equitable participation.
 
-**A. Reporting & Review**
+### **A. Token Classes and Economic Roles**
 
-- Users may report content via the governance system.
-- Reports are bundled and reviewed by randomized review pools formed from verified human users with relevant reputational weight.
-- Multiple reviewers assess content in parallel using clearly defined moderation policies ratified by the community.
-
-**B. Decision and Removal**
-
-- If flagged content reaches consensus for removal, its reference hash is removed from indexing smart contracts.
-- Nodes may continue to store such content, but it will not be discoverable unless explicitly queried.
-
-**C. Incentives and Penalties**
-
-- Positive rewards are issued for accurate reporting or participation in moderation reviews.
-- False reports or malicious censorship attempts can result in staking penalties or reputation slashing.
-
-## 13. **Tokenomics and Reward Currency**
-
-SovereigNet introduces a native reward currency that underpins the platform’s economic model, including contribution rewards, governance participation, staking, and liquidity.
-
-### **A. Token Classes**
+SovereigNet operates with a multi-token system, each fulfilling a distinct function within the ecosystem:
 
 | Token                  | Function                                              |
 |------------------------|-------------------------------------------------------|
-| $SVR (Sovereign Token) | Primary network utility and reward token             |
-| $GOV (Governance Token)| Used in DAO voting and treasury decisions            |
-| $UTIL (Utility Coin)   | Used for microtransactions, tipping, internal services|
+| $SVR (Sovereign Token) | Primary network utility and reward token              |
+| $GOV (Governance Token)| Used in DAO voting and treasury decisions             |
+| $UTIL (Utility Coin)   | Used for microtransactions, shoping, internal services|
 
 **Each token is minted by smart contract and follows strict issuance rules approved by the community.**
 
 ### **B. Reward Token Features ($SVR)**
 
-- Distributed to users based on:
+SovereigNet introduces a native reward currency that underpins the platform’s economic model, including contribution rewards, governance participation, staking, and liquidity.
+
+- **Distributed to users based on:**
    - Posting quality content (via engagement metrics)
    - Moderating and reviewing content or proposals
    - Participating in elections and votes
    - Verifying others in the PoH system
 - Subject to a small automatic tax (e.g., 1–5%) to fund the Community Chest treasury
-- Can be staked to:
+- **Can be staked to:**
    - Back governance proposals (no vote weighting)
    - Demonstrate trust for elected candidates
    - Participate in DeFi integrations for passive yield
 
-## 14. **DeFi Integration and Token Utility**
+**Key Features:**
 
-SovereigNet extends beyond the social platform by embedding financial mechanisms that reward long-term support and ecosystem growth.
+**Reward Tax:** A small percentage (1–5%) of every reward is automatically redirected to the Community Treasury via smart contract.
 
-**A. Liquidity Pools**
+**Non-weighted Governance Staking:** Tokens can be staked to show support for proposals or candidates, but do not influence vote weight.
 
-- Users can pair $SVR with ETH, USDT, or other assets on DEXs (Uniswap, PancakeSwap).
-- Liquidity providers (LPs) earn:
-   - Swap fees
-   - Bonus $SVR rewards through governance
-- Platform bootstraps initial pools using treasury seed liquidity approved by DAO vote.
+**DeFi Staking Eligibility:** Users can stake $SVR to earn additional rewards in DeFi pools.
 
-**B. Staking and Yield Farming**
+**Utility Spend:** Tokens are usable for in-platform purchases like content boosting or tipping.
 
-- Holders of $SVR can stake their tokens on authorized DeFi platforms.
-- Rewards include:
-   - Additional $SVR
-   - $GOV tokens
-   - Participation multipliers in governance voting
-
-**C. DAO-Tied Treasury Growth**
-
-- Idle funds in the treasury are invested in low-risk DeFi protocols.
-- All treasury growth strategies are:
-   - Publicly proposed and voted on
-   - Reviewed and audited before enactment
-   - Revocable via emergency vote
-
-## 15. **Incentive Ecosystem**
-
-SovereigNet’s token economy is value-driven and meritocratic, ensuring users are consistently rewarded for meaningful contributions, not speculative holding or spam.
-
-### **A. Contribution Rewards**
+### **C. Incentive Ecosystem: Contribution-Based Rewards**
 
 | Action                              | Reward                                          |
 |-------------------------------------|-------------------------------------------------|
@@ -357,15 +432,21 @@ SovereigNet’s token economy is value-driven and meritocratic, ensuring users a
 | Vote in elections or referenda      | $SVR bonus + 2× in runoff                       |
 | Moderate flagged content            | Rewarded with multipliers for accuracy          |
 
-**B. Reputation System**
+**Note:** These actions are tracked on-chain to ensure transparency and prevent abuse.
 
-- Each address earns reputation tokens tied to voting accuracy, proposal history, and moderation accuracy.
-- Reputation affects:
-   - Eligibility for moderator/reviewer roles
-   - Influence in specific governance pools
-   - Trust-based weighting for non-voting tasks (e.g., staking delegation)
+### **D. Reputation-Linked Incentives**
 
-## 16. **Development Roadmap**
+Each wallet address on SovereigNet has a non-transferable reputation score, reflecting its trust level and performance history. Reputation influences eligibility for high-trust roles (moderator, auditor, treasurer), moderation weight in reviewer pools, and token reward multipliers based on historical accuracy
+
+Reputation is updated automatically through smart contract logic, based on engagement in governance, voting behavior, and moderation precision.
+
+### **E. Incentive Design Philosophy**
+
+Rewards are tied to merit and transparency, not capital, no reward farming or speculative spam incentives. Long-term holders gain utility through yield mechanisms, reputation-linked influence, and staking bonuses rather than simple token inflation.
+
+This tokenomics model ensures that SovereigNet remains resilient, fair, and resistant to short-term manipulation.
+
+## 12. **Development Roadmap**
 
 The SovereigNet roadmap is designed in four major phases, each containing structured milestones. It begins with core infrastructure and progresses toward full community governance, public ownership, and long-term sustainability.
 
@@ -437,7 +518,7 @@ Complete public ownership, inter-node federation, and disaster recovery mechanis
 - Final transition to permanent public DAO with no admin override
 - Official handoff to user-governed entity (DAO enshrined)
 
-## 17. **Minimum Viable Product (MVP)**
+## 13. **Minimum Viable Product (MVP)**
 
 The MVP of SovereigNet focuses on creating a fully functional, privacy-first decentralized social platform with core governance and user incentive systems.
 
@@ -460,7 +541,7 @@ The MVP of SovereigNet focuses on creating a fully functional, privacy-first dec
 - Hold first community-run proposal cycle.
 - Demonstrate PoH + voting works with 500+ users.
 
-## 18. **Platform Resilience & Self-Healing**
+## 14. **Platform Resilience & Self-Healing**
 
 SovereigNet is built with the expectation of adversarial conditions, attack attempts, or external censorship pressure. Therefore, resilience and recoverability are core principles.
 
@@ -482,7 +563,7 @@ SovereigNet is built with the expectation of adversarial conditions, attack atte
 
 **Historical Snapshot Tools**: Nodes can replay the entire state history via chain logs and Merkle hashes.
 
-## 19. **Ownership, Sustainability & Public Transition**
+## 15. **Ownership, Sustainability & Public Transition**
 
 SovereigNet is not a product owned by any founder or corporation. It is an anti-platform — designed to be handed over to the public.
 
@@ -498,7 +579,7 @@ SovereigNet is not a product owned by any founder or corporation. It is an anti-
 - Treasury operations, governance rules, and protocol changes will be fully immutable and DAO-enforced.
 - The founder(s) relinquish control but retain reward tokens as part of the original contributor emission schedule (if community-approved).
 
-## 20. **Philosophy: Freedom Through Decentralization**
+## 16. **Philosophy: Freedom Through Decentralization**
 
 At its core, **SovereigNet is a tool of liberation.**
 
@@ -508,7 +589,7 @@ SovereigNet is not merely a social network, it is a decentralized defense mechan
 
 By combining peer-to-peer technology, zero-knowledge identity, user-owned governance, and cryptographically enforced transparency, SovereigNet renders censorship obsolete, turns participation into currency, and makes centralized control impossible.
 
-## 21. **Real-World Use Cases**
+## 17. **Real-World Use Cases**
 
 SovereigNet has the potential to reshape the internet's social fabric by offering tools to communities, activists, creators, and everyday users who need true independence in how they connect and communicate.
 
@@ -535,7 +616,7 @@ SovereigNet has the potential to reshape the internet's social fabric by offerin
 
 -DAOs, co-ops, or online communities can use SovereigNet's quadratic voting, proposal lifecycle, and treasury system to make group decisions, fund projects, and run fair elections.
 
-## 22. **Summary of Strengths**
+## 18. **Summary of Strengths**
 
 SovereigNet is more than the sum of its features. It’s an ecosystem of autonomy, designed to remain permanently free from central control.
 
@@ -569,7 +650,7 @@ SovereigNet is more than the sum of its features. It’s an ecosystem of autonom
 - Federated node hosting and fork resilience
 - Smart contract-based governance eliminates admin privileges
 —
-## 23. **Call to Action: This Can’t Be Done Alone**
+## 19. **Call to Action: This Can’t Be Done Alone**
 
 SovereigNet is not a finished project or a corporate startup. It’s a seed, a blueprint for something much larger than any individual. It was envisioned by someone who has grown tired of centralized networks, empty promises of “free speech,” and the illusion of privacy.
 
@@ -589,7 +670,7 @@ You don’t need to be a developer to contribute:
 
 ---
 
-## 24. **Conclusion**
+## 20. **Conclusion**
 
 SovereigNet stands as a proof-of-possibility: that **privacy**, **governance**, and **freedom** do not have to be traded for convenience. It is built by design to be self-governing, unstoppable, and radically fair. In an age of digital authoritarianism, SovereigNet is a reclamation of our right to speak, connect, and organize without permission.
 
@@ -599,7 +680,7 @@ Now it’s time to build.
 
 ---
 
-## 25. **Glossary**
+## 21. **Glossary**
 
 | **Term**                      | **Definition** |
 |-------------------------------|----------------|
@@ -622,7 +703,7 @@ Now it’s time to build.
 
 ---
 
-## 26. **Index**
+## 22. **Index**
 
 | **Topic**                   | **Section(s)**                                             |
 |-----------------------------|-------------------------------------------------------------|
