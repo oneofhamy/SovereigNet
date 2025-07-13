@@ -2,32 +2,32 @@
 ---
 ## **Table of Contents**
 
-1. [Introduction]
-2. [Core Vision]
-3. [Decentralized Infrastructure]
-4. [Privacy and Security Features] 
-5. [Governance Model]
-6. [Reward Token and DeFi Integration] 
-7. [Content and Moderation]
-8. [SovereigNet System Architecture] 
-9. [Identity and Proof of Humanity (PoH)]
-10. [Governance System Design]
-11. [Decentralized Content Architecture] 
-12. [Community Moderation and Discussion] 
-13. [Tokenomics and Reward Currency]
-14. [DeFi Integration and Token Utility]
-15. [Incentive Ecosystem]  
-16. [Development Roadmap]
-17. [Minimum Viable Product (MVP)] 
-18. [Platform Resilience & Self-Healing]
-19. [Ownership, Sustainability & Public Transition]
-20. [Philosophy: Freedom Through Decentralization]
-21. [Real-World Use Cases]
-22. [Summary of Strengths]
-23. [Call to Action]
-24. [Conclusion] 
-25. [Glossary]
-26. [Index]
+1. [Introduction](#1-introduction)  
+2. [Core Vision](#2-core-vision)  
+3. [Decentralized Infrastructure](#3-decentralized-infrastructure)  
+4. [Privacy and Security Features](#4-privacy-and-security-features)  
+5. [Governance Model](#5-governance-model)  
+6. [Reward Token and DeFi Integration](#6-reward-token-and-defi-integration)  
+7. [Content and Moderation](#7-content-and-moderation)  
+8. [SovereigNet System Architecture](#8-sovereignet-system-architecture)  
+9. [Identity and Proof of Humanity (PoH)](#9-identity-and-proof-of-humanity-poh)  
+10. [Governance System Design](#10-governance-system-design)  
+11. [Decentralized Content Architecture](#11-decentralized-content-architecture)  
+12. [Community Moderation and Discussion](#12-community-moderation-and-discussion)  
+13. [Tokenomics and Reward Currency](#13-tokenomics-and-reward-currency)  
+14. [DeFi Integration and Token Utility](#14-defi-integration-and-token-utility)  
+15. [Incentive Ecosystem](#15-incentive-ecosystem)  
+16. [Development Roadmap](#16-development-roadmap)  
+17. [Minimum Viable Product (MVP)](#17-minimum-viable-product-mvp)  
+18. [Platform Resilience & Self-Healing](#18-platform-resilience--self-healing)  
+19. [Ownership, Sustainability & Public Transition](#19-ownership-sustainability--public-transition)  
+20. [Philosophy: Freedom Through Decentralization](#20-philosophy-freedom-through-decentralization)  
+21. [Real-World Use Cases](#21-real-world-use-cases)  
+22. [Summary of Strengths](#22-summary-of-strengths)  
+23. [Call to Action](#23-call-to-action-this-cant-be-done-alone)  
+24. [Conclusion](#24-conclusion)  
+25. [Glossary](#glossary)  
+26. [Index](#index)
 ---
 ## 1. **Introduction**
 
@@ -288,7 +288,7 @@ SovereigNet rejects corporate-style moderation teams and replaces them with a de
 - Positive rewards are issued for accurate reporting or participation in moderation reviews.
 - False reports or malicious censorship attempts can result in staking penalties or reputation slashing.
 
-## **Tokenomics and Reward Currency**
+## 13. **Tokenomics and Reward Currency**
 
 SovereigNet introduces a native reward currency that underpins the platform’s economic model, including contribution rewards, governance participation, staking, and liquidity.
 
@@ -315,7 +315,7 @@ SovereigNet introduces a native reward currency that underpins the platform’s 
    - Demonstrate trust for elected candidates
    - Participate in DeFi integrations for passive yield
 
-## 13. **DeFi Integration and Token Utility**
+## 14. **DeFi Integration and Token Utility**
 
 SovereigNet extends beyond the social platform by embedding financial mechanisms that reward long-term support and ecosystem growth.
 
@@ -343,7 +343,7 @@ SovereigNet extends beyond the social platform by embedding financial mechanisms
    - Reviewed and audited before enactment
    - Revocable via emergency vote
 
-## 14. **Incentive Ecosystem**
+## 15. **Incentive Ecosystem**
 
 SovereigNet’s token economy is value-driven and meritocratic, ensuring users are consistently rewarded for meaningful contributions, not speculative holding or spam.
 
@@ -365,7 +365,7 @@ SovereigNet’s token economy is value-driven and meritocratic, ensuring users a
    - Influence in specific governance pools
    - Trust-based weighting for non-voting tasks (e.g., staking delegation)
 
-## 15. **Development Roadmap**
+## 16. **Development Roadmap**
 
 The SovereigNet roadmap is designed in four major phases, each containing structured milestones. It begins with core infrastructure and progresses toward full community governance, public ownership, and long-term sustainability.
 
@@ -437,7 +437,7 @@ Complete public ownership, inter-node federation, and disaster recovery mechanis
 - Final transition to permanent public DAO with no admin override
 - Official handoff to user-governed entity (DAO enshrined)
 
-## 16. **Minimum Viable Product (MVP)**
+## 17. **Minimum Viable Product (MVP)**
 
 The MVP of SovereigNet focuses on creating a fully functional, privacy-first decentralized social platform with core governance and user incentive systems.
 
@@ -460,7 +460,7 @@ The MVP of SovereigNet focuses on creating a fully functional, privacy-first dec
 - Hold first community-run proposal cycle.
 - Demonstrate PoH + voting works with 500+ users.
 
-## 17. **Platform Resilience & Self-Healing**
+## 18. **Platform Resilience & Self-Healing**
 
 SovereigNet is built with the expectation of adversarial conditions, attack attempts, or external censorship pressure. Therefore, resilience and recoverability are core principles.
 
@@ -482,7 +482,7 @@ SovereigNet is built with the expectation of adversarial conditions, attack atte
 
 **Historical Snapshot Tools**: Nodes can replay the entire state history via chain logs and Merkle hashes.
 
-## 18. **Ownership, Sustainability & Public Transition**
+## 19. **Ownership, Sustainability & Public Transition**
 
 SovereigNet is not a product owned by any founder or corporation. It is an anti-platform — designed to be handed over to the public.
 
@@ -498,7 +498,7 @@ SovereigNet is not a product owned by any founder or corporation. It is an anti-
 - Treasury operations, governance rules, and protocol changes will be fully immutable and DAO-enforced.
 - The founder(s) relinquish control but retain reward tokens as part of the original contributor emission schedule (if community-approved).
 
-## 19. **Philosophy: Freedom Through Decentralization**
+## 20. **Philosophy: Freedom Through Decentralization**
 
 At its core, **SovereigNet is a tool of liberation.**
 
@@ -508,7 +508,7 @@ SovereigNet is not merely a social network, it is a decentralized defense mechan
 
 By combining peer-to-peer technology, zero-knowledge identity, user-owned governance, and cryptographically enforced transparency, SovereigNet renders censorship obsolete, turns participation into currency, and makes centralized control impossible.
 
-## 20. **Real-World Use Cases**
+## 21. **Real-World Use Cases**
 
 SovereigNet has the potential to reshape the internet's social fabric by offering tools to communities, activists, creators, and everyday users who need true independence in how they connect and communicate.
 
@@ -535,7 +535,7 @@ SovereigNet has the potential to reshape the internet's social fabric by offerin
 
 -DAOs, co-ops, or online communities can use SovereigNet's quadratic voting, proposal lifecycle, and treasury system to make group decisions, fund projects, and run fair elections.
 
-## 21. **Summary of Strengths**
+## 22. **Summary of Strengths**
 
 SovereigNet is more than the sum of its features. It’s an ecosystem of autonomy, designed to remain permanently free from central control.
 
@@ -569,7 +569,7 @@ SovereigNet is more than the sum of its features. It’s an ecosystem of autonom
 - Federated node hosting and fork resilience
 - Smart contract-based governance eliminates admin privileges
 —
-## 22. **Call to Action: This Can’t Be Done Alone**
+## 23. **Call to Action: This Can’t Be Done Alone**
 
 SovereigNet is not a finished project or a corporate startup. It’s a seed, a blueprint for something much larger than any individual. It was envisioned by someone who has grown tired of centralized networks, empty promises of “free speech,” and the illusion of privacy.
 
@@ -586,8 +586,10 @@ You don’t need to be a developer to contribute:
 - Host a node.
 
 ### **SovereigNet will belong to its users. It will never be for sale.**
-—
-## 23. **Conclusion**
+
+---
+
+## 24. **Conclusion**
 
 SovereigNet stands as a proof-of-possibility: that **privacy**, **governance**, and **freedom** do not have to be traded for convenience. It is built by design to be self-governing, unstoppable, and radically fair. In an age of digital authoritarianism, SovereigNet is a reclamation of our right to speak, connect, and organize without permission.
 
@@ -597,7 +599,7 @@ Now it’s time to build.
 
 ---
 
-## 24. **Glossary**
+## 25. **Glossary**
 
 | **Term**                      | **Definition** |
 |-------------------------------|----------------|
@@ -620,7 +622,7 @@ Now it’s time to build.
 
 ---
 
-## 25. **Index**
+## 26. **Index**
 
 | **Topic**                   | **Section(s)**                                             |
 |-----------------------------|-------------------------------------------------------------|
