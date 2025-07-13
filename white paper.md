@@ -23,7 +23,7 @@
 19. [Call to Action: This Can’t Be Done Alone](#c19.-all-to-action-this-cant-be-done-alone)
 20. [Conclusion](#20.-conclusion)
 21. [Glossary](#21.-glossary)
-22. [Index](#22.-index)
+22. [Index](#22-index)
 ---
 ## 1. **Introduction**
 
