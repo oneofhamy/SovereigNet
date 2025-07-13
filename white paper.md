@@ -678,21 +678,70 @@ Now it’s time to build.
 
 ## 21. **Glossary**
 
-| **Term**                      | **Definition** |
-|-------------------------------|----------------|
-| **$SVR (Sovereign Token)**    | The native reward and utility token for SovereigNet used for participation, staking, and incentivization. |
-| **$GOV (Governance Token)**   | Token used specifically for voting and treasury decisions in SovereigNet's DAO. |
-| **$UTIL (Utility Coin)**      | In-platform microtransaction token for tipping, services, and enhancements. |
-| **DAO (Decentralized Autonomous Organization)** | A blockchain-based system governed by smart contracts and user consensus. |
-| **DeFi (Decentralized Finance)** | Blockchain-based financial services that operate without centralized institutions. |
-| **DID (Decentralized Identifier)** | A self-owned, blockchain-anchored digital identity. |
-| **IPFS (InterPlanetary File System)** | A decentralized storage protocol for storing and sharing files in a peer-to-peer fashion. |
-| **Libp2p / WebRTC**           | Networking protocols used to build peer-to-peer applications and direct encrypted communication channels. |
-| **Merkle Tree**               | A cryptographic data structure used to verify data integrity and proofs efficiently. |
-| **PoH (Proof of Humanity)**   | A zero-knowledge system proving a user is a unique human without exposing personal data. |
-| **Quadratic Voting**          | A voting mechanism where the cost of votes scales quadratically to prevent dominance by wealth. |
-| **Reputation Score**          | A non-tradable score representing user trustworthiness and contribution quality. |
-| **Smart Contract**            | Blockchain-based programmable logic that executes transactions or enforces rules automatically. |
-| **Staking**                   | Locking tokens to signal support or earn rewards, often related to governance or DeFi. |
-| **Treasury**                  | A decentralized fund controlled by community governance for project development and rewards. |
-| **ZKPs (Zero-Knowledge Proofs)** | Cryptographic methods allowing one party to prove something to another without revealing the underlying data. |№
+| **Term**                         | **Definition** |
+|----------------------------------|----------------|
+| **$SVR (Sovereign Token)**       | Reward and utility token used for user incentives, staking, and in-platform services. |
+| **$GOV (Governance Token)**      | Token exclusively used for DAO voting, proposal lifecycle, and treasury governance. |
+| **$UTIL (Utility Coin)**         | Used for tipping, boosting content, premium features, and internal transactions. |
+| **Arweave**                      | A decentralized permanent storage solution used to store encrypted content alongside IPFS. |
+| **Audit Trail**                  | Transparent and immutable records of moderation, governance, and voting decisions. |
+| **Bracket Voting**               | A voting system where proposals/candidates advance through rounds like tournament brackets. |
+| **Community Chest**              | DAO-controlled treasury funded through $SVR taxes and used for platform development. |
+| **DAO (Decentralized Autonomous Organization)** | Community-run governance model using smart contracts and token-based proposals. |
+| **Decentralized Identifier (DID)**| Blockchain-based identity credential owned and controlled by the user. |
+| **DeFi (Decentralized Finance)** | Financial applications that operate on public blockchains without centralized intermediaries. |
+| **Encrypted Social Feed**        | A user-generated content stream that is cryptographically secured and stored off-chain. |
+| **Governance Cycle**             | The structured lifecycle for nominations, proposals, voting, and ratification. |
+| **IPFS (InterPlanetary File System)** | Peer-to-peer hypermedia protocol for storing and sharing content in a distributed file system. |
+| **Libp2p**                       | A modular network stack used for building peer-to-peer applications, messaging, and file transfer. |
+| **Merkle Root**                  | A top-level hash that summarizes the contents of a Merkle tree and validates data integrity. |
+| **Merkle Tree**                  | A structure that allows efficient and secure verification of large data sets. |
+| **MetaMask / WalletConnect**     | Browser-based crypto wallets used for interacting with Web3 dApps like SovereigNet. |
+| **Multi-Sig Wallet**             | A wallet that requires multiple cryptographic signatures to approve a transaction, enhancing security. |
+| **Node**                         | A participant in the network that stores, relays, or verifies data on the SovereigNet platform. |
+| **Peer-to-Peer (P2P)**           | A decentralized communication model where nodes communicate directly without intermediaries. |
+| **PoH (Proof of Humanity)**      | Privacy-preserving system ensuring unique human participation using ZK proofs. |
+| **Proposal Lifecycle**           | The multi-stage process for community-driven decision making: nomination, review, voting, ratification. |
+| **Quadratic Voting**             | Voting system where the cost of additional votes increases quadratically to prevent dominance. |
+| **Reputation Token**             | A non-transferable score reflecting user contribution, accuracy, and governance involvement. |
+| **Runoff Voting**                | Final round in the governance cycle used when no proposal reaches a majority threshold. |
+| **Semaphore / MACI**             | Cryptographic frameworks supporting anonymous voting and Sybil resistance in governance. |
+| **Smart Contract**               | Self-executing code deployed on a blockchain to enforce rules, automate logic, or control funds. |
+| **Staking**                      | Locking tokens in smart contracts to signal commitment, earn rewards, or participate in governance. |
+| **Sybil Attack**                 | Exploiting a network by creating multiple fake identities; prevented via PoH in SovereigNet. |
+| **Time-Locked Contract**         | Smart contracts that delay execution to allow community oversight and emergency intervention. |
+| **Treasury**                     | A collectively governed fund for development, maintenance, and grants on SovereigNet. |
+| **Validator**                    | A trusted participant who verifies data, proposals, or identity in SovereigNet’s system. |
+| **Web3**                         | A decentralized web ecosystem integrating blockchain, crypto wallets, and user ownership. |
+| **WebRTC**                       | Real-time communication protocol for browser-based P2P interactions. |
+| **ZKPs (Zero-Knowledge Proofs)** | Mathematical proofs that verify information without revealing the actual data itself. |
+
+## 22. **Index**
+
+- **$GOV Token** — Token Utility (§6), Tokenomics (§11), DAO Voting (§5)
+- **$SVR Token** — Rewards (§6), DeFi (§6C), Governance Staking (§11), Taxation (§5D)
+- **$UTIL Coin** — Microtransactions (§6A), Content Boosting (§11)
+- **Audit Trail** — Content Moderation (§7), Proposal Tracking (§5)
+- **Blockchain** — Infrastructure (§3), Identity Verification (§9), Governance (§5), System Architecture (§8)
+- **Community Chest Treasury** — Tax System (§5D), DAO Fund (§6D), Governance Proposals (§5D2)
+- **Content Moderation** — Community Review (§7), Reviewer Pools (§7C), Incentives (§7D)
+- **DeFi Integration** — Token Yield (§6C), LP Rewards (§6C1), Treasury Growth (§6D)
+- **Decentralized Identity (DID)** — Privacy Systems (§4), PoH Design (§9)
+- **Encrypted Messaging** — Peer-to-Peer (§3, §10C), WebRTC (§3)
+- **Federation / Nodes** — Platform Resilience (§14), Final Transition (§15)
+- **Governance Design** — Proposal Lifecycle (§5B), Voting Safeguards (§5C), Reputation Weighting (§5E)
+- **Identity & Proof of Humanity (PoH)** — System Design (§9), Governance Eligibility (§5B), Reputation (§11D)
+- **Indexing Contracts** — Content Visibility (§7C), Delisting Protocol (§7C)
+- **IPFS/Arweave** — Storage Layer (§3), Content Architecture (§10)
+- **Merkle Trees / Hashes** — Integrity Guarantees (§10, §14), PoH Privacy (§9)
+- **MVP** — Feature List (§13), Technical Scope (§13)
+- **Proposal Voting** — Quadratic Logic (§5A), Secret Ballots (§5C), Runoff Rounds (§5B3)
+- **Reputation System** — Token Incentives (§7D2, §11D), Moderation Pools (§7), Governance Roles (§5E)
+- **Self-Healing Protocols** — Panic Freeze (§14), Contract Locks (§14), Snapshot Recovery (§14)
+- **Smart Contracts** — DAO Functions (§5), Treasury Logic (§6D), Identity & Rewards (§4, §11)
+- **Staking** — Governance Influence (§11), Yield Farming (§6C2)
+- **System Architecture** — Blockchain, Storage, Messaging, Governance Modules (§8)
+- **Tokenomics** — Incentive Structures (§11), Reward Allocation (§6B, §11C), Treasury Taxation (§5D)
+- **Transparency Tools** — Audit Logs (§7), Public Dashboards (§5D3), Vote Records (§5C)
+- **Voting Mechanisms** — Quadratic Voting (§5A), Bracket / Runoff Voting (§5B3), Hidden Scores (§5C)
+- **ZK Identity / ZKPs** — PoH (§9), Reputation Anonymity (§11), Governance Voting (§5C)
