@@ -26,8 +26,8 @@
 22. [Summary of Strengths](#22-summary-of-strengths)  
 23. [Call to Action](#23-call-to-action-this-cant-be-done-alone)  
 24. [Conclusion](#24-conclusion)  
-25. [Glossary](#glossary)  
-26. [Index](#index)
+25. [Glossary](#25-glossary)  
+26. [Index](#26-index)
 ---
 ## 1. **Introduction**
 
