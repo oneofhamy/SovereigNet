@@ -73,20 +73,13 @@ Privacy and security are foundational to SovereigNet. These are some of the crit
 
 SovereigNet employs a multi-layered, community-driven defense system to detect and neutralize malicious accounts that bypass Proof of Humanity, while preserving user anonymity and decentralization.
 
-**Behavioral Monitoring:** On- and off-chain analysis flags patterns like spam posting, synchronized voting, or sybil-like activity. Suspicious behavior is surfaced anonymously for review.
-
-**Community Flagging:** Users can report bad actors. Flags are reviewed by reputation-weighted moderators selected from trust pools.
-
-**Scrutiny Mode:** Accounts with repeated flags enter restricted mode and must reverify their legitimacy via challenges or community appeals.
-
-**Reputation Scaling:** New and low-reputation accounts have limited influence, while trustworthy users earn greater governance access.
-
-**Sybil Detection:** Graph analysis identifies collusion and vote manipulation, with public visualizations and forensics.
-
-**Stake Slashing:** Proven malicious actors lose their staked tokens and voting rights. Harmful proposals are reversible, with participants flagged.
-
-**Vote Anonymity:** Voting is hidden until the round ends to prevent strategic manipulation. Candidate order is randomized per user.
-
+- **Behavioral Monitoring:** On- and off-chain analysis flags patterns like spam posting, synchronized voting, or sybil-like activity. Suspicious behavior is surfaced anonymously for review.
+- **Community Flagging:** Users can report bad actors. Flags are reviewed by reputation-weighted moderators selected from trust pools.
+- **Scrutiny Mode:** Accounts with repeated flags enter restricted mode and must reverify their legitimacy via challenges or community appeals.
+- **Reputation Scaling:** New and low-reputation accounts have limited influence, while trustworthy users earn greater governance access.
+- **Sybil Detection:** Graph analysis identifies collusion and vote manipulation, with public visualizations and forensics.
+- **Stake Slashing:** Proven malicious actors lose their staked tokens and voting rights. Harmful proposals are reversible, with participants flagged.
+- **Vote Anonymity:** Voting is hidden until the round ends to prevent strategic manipulation. Candidate order is randomized per user.
 
 All enforcement is automated, transparent, and DAO-governed—ensuring a resilient, censorship-resistant platform that remains safe from manipulation without compromising privacy.
 
