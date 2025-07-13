@@ -6,8 +6,8 @@
 2. [Core Vision](#2.-core-vision)
 3. [Decentralized Infrastructure](#3.-decentralized-infrastructure)
 4. [Privacy and Security Features](#4.-privacy-and-security-features)
-5. [Governance System Design](#5-governance-system-design)
-6. Anti Spam, Bot, and Psyop Defenses
+5. Anti Spam, Bot, and Psyop Defenses
+6. [Governance System Design](#5-governance-system-design)
 7. [Token Utility and DeFi Integration](#6-token-utility-and-defi-integration)
 8. [Content Moderation and Community Oversight](#7-content-moderation-and-community-oversight)
 9. [SovereigNet System Architecture](#8-sovereignet-system-architecture)
