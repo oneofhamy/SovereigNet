@@ -7,6 +7,7 @@
 3. [Decentralized Infrastructure](#3.-decentralized-infrastructure)
 4. [Privacy and Security Features](#4.-privacy-and-security-features)
 5. [Governance System Design](#5-governance-system-design)
+Anti Spam, Bot, and Psyop Defenses
 6. [Token Utility and DeFi Integration](#6-token-utility-and-defi-integration)
 7. [Content Moderation and Community Oversight](#7-content-moderation-and-community-oversight)
 8. [SovereigNet System Architecture](#8-sovereignet-system-architecture)
@@ -65,6 +66,31 @@ Privacy and security are foundational to SovereigNet. These are some of the crit
 **Proof of Humanity (PoH):** SovereigNet utilizes zero-knowledge proofs (ZKPs) for a privacy-preserving Proof of Humanity system. This ensures that users are verified as human without revealing personal details. The system utilizes biometric verification, social proof, or decentralized identifiers (DIDs) to confirm human identity, protecting the platform from bot attacks and ensuring the legitimacy of participants.
 
 **Decentralized Identity:** Users control their identities through decentralized identifiers (DIDs) on the blockchain, ensuring full ownership of their online personas. Identity verification can be done using various methods (e.g., mobile number verification, social media integrations, or biometrics) while keeping the underlying information private.
+
+---
+
+## X. **Anti-Bot, Spam, and Psyop Defense** -Needs TOC
+
+SovereigNet employs a multi-layered, community-driven defense system to detect and neutralize malicious accounts that bypass Proof of Humanity, while preserving user anonymity and decentralization.
+
+**Behavioral Monitoring:** On- and off-chain analysis flags patterns like spam posting, synchronized voting, or sybil-like activity. Suspicious behavior is surfaced anonymously for review.
+
+**Community Flagging:** Users can report bad actors. Flags are reviewed by reputation-weighted moderators selected from trust pools.
+
+**Scrutiny Mode:** Accounts with repeated flags enter restricted mode and must reverify their legitimacy via challenges or community appeals.
+
+**Reputation Scaling:** New and low-reputation accounts have limited influence, while trustworthy users earn greater governance access.
+
+**Sybil Detection:** Graph analysis identifies collusion and vote manipulation, with public visualizations and forensics.
+
+**Stake Slashing:** Proven malicious actors lose their staked tokens and voting rights. Harmful proposals are reversible, with participants flagged.
+
+**Vote Anonymity:** Voting is hidden until the round ends to prevent strategic manipulation. Candidate order is randomized per user.
+
+
+All enforcement is automated, transparent, and DAO-governed—ensuring a resilient, censorship-resistant platform that remains safe from manipulation without compromising privacy.
+
+---
 
 ## 5. **Governance System Design**
 
@@ -674,6 +700,8 @@ The code is open. The roadmap is public. The vision is shared.
 Now it’s time to build.
 
 ---
+
+**UPDATE FOR BOT DEFENSE SECTION**
 
 ## 21. **Glossary**
 
