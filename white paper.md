@@ -31,7 +31,6 @@ SovereigNet represents a paradigm shift in how social media platforms are struct
 
 At its core, SovereigNet is a social media ecosystem that prioritizes user sovereignty and privacy. The platform operates on the belief that digital communication should be a fundamental human right: unrestricted, secure, and free from manipulation by powerful corporations, governments, or bad actors. The platform’s blockchain-based governance ensures fairness, transparency, and accountability, while the reward system and DeFi incentives motivate active participation and platform growth. SovereigNet is not just a social media platform, it is a movement towards reclaiming digital sovereignty and building a truly user-owned and controlled ecosystem.
 
----
 ## 2. **Core Vision**
 
 The vision behind SovereigNet is to create a platform that is:
