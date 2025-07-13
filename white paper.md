@@ -1,33 +1,29 @@
 # **SovereigNet: A Decentralized, Encrypted, Peer-to-Peer Social Media and Governance Ecosystem**
 ---
-## **Table of Contents**
+## Table of Contents
 
 1. [Introduction](#1-introduction)  
 2. [Core Vision](#2-core-vision)  
 3. [Decentralized Infrastructure](#3-decentralized-infrastructure)  
-4. [Privacy and Security Features](#4-privacy-and-security-features)  
-5. [Governance Model](#5-governance-model)  
-6. [Reward Token and DeFi Integration](#6-reward-token-and-defi-integration)  
-7. [Content and Moderation](#7-content-and-moderation)  
-8. [SovereigNet System Architecture](#8-sovereignet-system-architecture)  
-9. [Identity and Proof of Humanity (PoH)](#9-identity-and-proof-of-humanity-poh)  
-10. [Governance System Design](#10-governance-system-design)  
-11. [Decentralized Content Architecture](#11-decentralized-content-architecture)  
-12. [Community Moderation and Discussion](#12-community-moderation-and-discussion)  
-13. [Tokenomics and Reward Currency](#13-tokenomics-and-reward-currency)  
-14. [DeFi Integration and Token Utility](#14-defi-integration-and-token-utility)  
-15. [Incentive Ecosystem](#15-incentive-ecosystem)  
-16. [Development Roadmap](#16-development-roadmap)  
-17. [Minimum Viable Product (MVP)](#17-minimum-viable-product-mvp)  
-18. [Platform Resilience & Self-Healing](#18-platform-resilience--self-healing)  
-19. [Ownership, Sustainability & Public Transition](#19-ownership-sustainability--public-transition)  
-20. [Philosophy: Freedom Through Decentralization](#20-philosophy-freedom-through-decentralization)  
-21. [Real-World Use Cases](#21-real-world-use-cases)  
-22. [Summary of Strengths](#22-summary-of-strengths)  
-23. [Call to Action](#23-call-to-action-this-cant-be-done-alone)  
-24. [Conclusion](#24-conclusion)  
-25. [Glossary](#25-glossary)  
-26. [Index](#26-index)
+4. [Privacy and Security Features](#4-privacy-and-security-features) 
+5. [Governance System Design](#6-governance-system-design)  
+6. [Token Utility and DeFi Integration](#7-token-utility-and-defi-integration)  
+7. [Content Moderation and Community Oversight](#8-content-moderation-and-community-oversight)  
+8. [SovereigNet System Architecture](#9-tokenomics-and-incentive-ecosystem)  
+9. [Identity and Proof of Humanity (PoH)](#10-sovereignet-system-architecture)  
+10. [Decentralized Content Architecture](#11-minimum-viable-product-mvp)  
+11. [Tokenomics and Incentive Ecosystem](#12-development-roadmap)  
+12. [Development Roadmap](#13-platform-resilience--self-healing)  
+13. [Minimum Viable Product (MVP)](#14-ownership-sustainability--public-transition)  
+14. [Platform Resilience & Self-Healing](#15-philosophy-freedom-through-decentralization)  
+15. [Ownership, Sustainability & Public Transition](#16-real-world-use-cases)  
+16. [Philosophy: Freedom Through Decentralization](#17-summary-of-strengths)  
+17. [Real-World Use Cases](#18-call-to-action-this-cant-be-done-alone)  
+18. [Summary of Strengths](#19-license)  
+19. [Call to Action: This Can’t Be Done Alone](#20-security--attack-vector-mitigation)  
+20. [Conclusion](#21-token-flow-diagram)  
+21. [Glossary](#22-glossary)  
+22. [Index](#23-index)
 ---
 ## 1. **Introduction**
 
@@ -699,32 +695,4 @@ Now it’s time to build.
 | **Smart Contract**            | Blockchain-based programmable logic that executes transactions or enforces rules automatically. |
 | **Staking**                   | Locking tokens to signal support or earn rewards, often related to governance or DeFi. |
 | **Treasury**                  | A decentralized fund controlled by community governance for project development and rewards. |
-| **ZKPs (Zero-Knowledge Proofs)** | Cryptographic methods allowing one party to prove something to another without revealing the underlying data. |
-
----
-
-## 22. **Index**
-
-| **Topic**                   | **Section(s)**                                             |
-|-----------------------------|-------------------------------------------------------------|
-| Blockchain                  | 3, 8, 10, 13                                                |
-| Community Governance        | 2, 5, 10, 12, 14, 16                                        |
-| Content Moderation          | 5, 7, 11, 12                                                |
-| DeFi Integration            | 6, 13, 14                                                   |
-| Decentralized Identity      | 4, 8, 9                                                     |
-| Emergency Protocols         | 18                                                          |
-| Encrypted Messaging         | 4, 8, 11                                                    |
-| Federation                  | 8, 18                                                       |
-| Governance Tokens           | 5, 10, 13                                                   |
-| Incentive Systems           | 6, 14, 15                                                   |
-| IPFS / Decentralized Storage| 3, 8, 11                                                    |
-| Liquidity Pools             | 13                                                          |
-| Minimum Viable Product (MVP)| 16                                                          |
-| Proof of Humanity (PoH)     | 2, 4, 9, 10                                                 |
-| Quadratic Voting            | 5, 10                                                       |
-| Reputation System           | 7, 10, 14                                                   |
-| Smart Contracts             | 3, 8, 10, 14                                                |
-| Sovereign Token ($SVR)      | 6, 13                                                       |
-| Treasury System             | 5, 10, 13                                                   |
-| Voting Protocols            | 5, 10                                                       |
-| Zero-Knowledge Proofs (ZKP) | 2, 4, 8, 9                                                  |
+| **ZKPs (Zero-Knowledge Proofs)** | Cryptographic methods allowing one party to prove something to another without revealing the underlying data. |№
