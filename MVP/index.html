@@ -1,0 +1,694 @@
+import React, { useState, useEffect } from 'react';
+import { Users, Shield, Vote, MessageCircle, Coins, Settings, Eye, EyeOff, Lock, Send, Plus, ThumbsUp, ThumbsDown, Flag, Award, Zap } from 'lucide-react';
+
+const SovereigNetMVP = () => {
+  // Core State Management
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isPoHVerified, setIsPoHVerified] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [proposals, setProposals] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [userStats, setUserStats] = useState({ svr: 0, reputation: 100, participationScore: 0 });
+  const [activeTab, setActiveTab] = useState('feed');
+
+  // UI State
+  const [newPostContent, setNewPostContent] = useState('');
+  const [newProposalTitle, setNewProposalTitle] = useState('');
+  const [newProposalDescription, setNewProposalDescription] = useState('');
+  const [newMessageContent, setNewMessageContent] = useState('');
+  const [selectedRecipient, setSelectedRecipient] = useState('');
+  const [votingCredits, setVotingCredits] = useState(100);
+
+  // Initialize demo data
+  useEffect(() => {
+    // Demo posts
+    setPosts([
+      {
+        id: 1,
+        author: 'anon_activist_42',
+        content: 'Just tested the new quadratic voting system - it actually prevents whale dominance! 🗳️',
+        timestamp: new Date(Date.now() - 3600000),
+        encrypted: false,
+        votes: 23,
+        comments: 5,
+        isOwnPost: false
+      },
+      {
+        id: 2,
+        author: 'privacy_advocate',
+        content: 'Love how my identity stays anonymous while still being verified human. This PoH system is revolutionary!',
+        timestamp: new Date(Date.now() - 7200000),
+        encrypted: true,
+        votes: 45,
+        comments: 12,
+        isOwnPost: false
+      }
+    ]);
+
+    // Demo proposals
+    setProposals([
+      {
+        id: 1,
+        title: 'Increase Content Creator Rewards by 25%',
+        description: 'Proposal to boost $SVR rewards for high-quality content to incentivize platform growth',
+        author: 'community_builder',
+        status: 'voting',
+        votesFor: 342,
+        votesAgainst: 89,
+        endTime: new Date(Date.now() + 86400000),
+        userVoted: false
+      },
+      {
+        id: 2,
+        title: 'Implement Advanced Anti-Spam Measures',
+        description: 'Deploy ML-based spam detection with community override capabilities',
+        author: 'tech_contributor',
+        status: 'discussion',
+        votesFor: 0,
+        votesAgainst: 0,
+        endTime: new Date(Date.now() + 172800000),
+        userVoted: false
+      }
+    ]);
+
+    // Demo messages
+    setMessages([
+      {
+        id: 1,
+        sender: 'mutual_aid_organizer',
+        content: '🔒 Encrypted: Planning community garden project. Meet at coordinates shared separately.',
+        timestamp: new Date(Date.now() - 1800000),
+        encrypted: true
+      }
+    ]);
+  }, []);
+
+  // User Registration/Login
+  const handleUserRegistration = () => {
+    const pseudonym = `anon_user_${Math.floor(Math.random() * 10000)}`;
+    setCurrentUser(pseudonym);
+    setUserStats({ svr: 50, reputation: 100, participationScore: 0 });
+  };
+
+  // Proof of Humanity Verification
+  const handlePoHVerification = () => {
+    // Simulate ZK-proof verification
+    setTimeout(() => {
+      setIsPoHVerified(true);
+      setUserStats(prev => ({ ...prev, svr: prev.svr + 25, reputation: prev.reputation + 50 }));
+    }, 2000);
+  };
+
+  // Post Creation
+  const handleCreatePost = () => {
+    if (!newPostContent.trim() || !currentUser) return;
+
+    const newPost = {
+      id: posts.length + 1,
+      author: currentUser,
+      content: newPostContent,
+      timestamp: new Date(),
+      encrypted: false,
+      votes: 0,
+      comments: 0,
+      isOwnPost: true
+    };
+
+    setPosts(prev => [newPost, ...prev]);
+    setNewPostContent('');
+    
+    // Reward for posting
+    setUserStats(prev => ({ 
+      ...prev, 
+      svr: prev.svr + 5, 
+      participationScore: prev.participationScore + 10 
+    }));
+  };
+
+  // Proposal Creation
+  const handleCreateProposal = () => {
+    if (!newProposalTitle.trim() || !newProposalDescription.trim() || !currentUser || !isPoHVerified) return;
+
+    const newProposal = {
+      id: proposals.length + 1,
+      title: newProposalTitle,
+      description: newProposalDescription,
+      author: currentUser,
+      status: 'discussion',
+      votesFor: 0,
+      votesAgainst: 0,
+      endTime: new Date(Date.now() + 604800000),
+      userVoted: false
+    };
+
+    setProposals(prev => [newProposal, ...prev]);
+    setNewProposalTitle('');
+    setNewProposalDescription('');
+    
+    // Reward for governance participation
+    setUserStats(prev => ({ 
+      ...prev, 
+      svr: prev.svr + 15, 
+      participationScore: prev.participationScore + 25 
+    }));
+  };
+
+  // Quadratic Voting
+  const handleVote = (proposalId, voteType) => {
+    if (!isPoHVerified || votingCredits <= 0) return;
+
+    const cost = 1; // Simplified for demo
+    setVotingCredits(prev => prev - cost);
+    
+    setProposals(prev => prev.map(proposal => {
+      if (proposal.id === proposalId) {
+        return {
+          ...proposal,
+          [voteType === 'for' ? 'votesFor' : 'votesAgainst']: proposal[voteType === 'for' ? 'votesFor' : 'votesAgainst'] + 1,
+          userVoted: true
+        };
+      }
+      return proposal;
+    }));
+
+    // Reward for voting
+    setUserStats(prev => ({ 
+      ...prev, 
+      svr: prev.svr + 3, 
+      participationScore: prev.participationScore + 15 
+    }));
+  };
+
+  // Encrypted Messaging
+  const handleSendMessage = () => {
+    if (!newMessageContent.trim() || !selectedRecipient) return;
+
+    const newMessage = {
+      id: messages.length + 1,
+      sender: currentUser,
+      recipient: selectedRecipient,
+      content: `🔒 Encrypted: ${newMessageContent}`,
+      timestamp: new Date(),
+      encrypted: true
+    };
+
+    setMessages(prev => [newMessage, ...prev]);
+    setNewMessageContent('');
+    setSelectedRecipient('');
+  };
+
+  // Content Moderation
+  const handleContentModeration = (postId, action) => {
+    if (!isPoHVerified) return;
+
+    // Reward for moderation
+    setUserStats(prev => ({ 
+      ...prev, 
+      svr: prev.svr + 2, 
+      reputation: prev.reputation + 5,
+      participationScore: prev.participationScore + 10 
+    }));
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      {/* Header */}
+      <header className="bg-black/30 backdrop-blur-lg border-b border-purple-500/30 p-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
+              <Shield className="w-6 h-6" />
+            </div>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              SovereigNet MVP
+            </h1>
+          </div>
+
+          {currentUser ? (
+            <div className="flex items-center space-x-6">
+              <div className="text-right">
+                <div className="text-sm text-purple-300">@{currentUser}</div>
+                <div className="flex items-center space-x-4 text-xs">
+                  <span className="flex items-center space-x-1">
+                    <Coins className="w-3 h-3 text-yellow-400" />
+                    <span>{userStats.svr} $SVR</span>
+                  </span>
+                  <span className="flex items-center space-x-1">
+                    <Award className="w-3 h-3 text-green-400" />
+                    <span>{userStats.reputation} REP</span>
+                  </span>
+                  {isPoHVerified && (
+                    <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">
+                      PoH Verified
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={handleUserRegistration}
+              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-6 py-2 rounded-lg font-medium transition-all duration-200"
+            >
+              Join SovereigNet
+            </button>
+          )}
+        </div>
+      </header>
+
+      {!currentUser ? (
+        /* Welcome Screen */
+        <div className="max-w-4xl mx-auto p-8 text-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl font-bold mb-4">Welcome to SovereigNet</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              A decentralized, privacy-first social platform where you own your data and govern together
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <Lock className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Privacy First</h3>
+                <p className="text-gray-400">End-to-end encryption with zero-knowledge identity proofs</p>
+              </div>
+              
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <Vote className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Community Governed</h3>
+                <p className="text-gray-400">Quadratic voting ensures fair democratic participation</p>
+              </div>
+              
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <Coins className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Earn Rewards</h3>
+                <p className="text-gray-400">Get $SVR tokens for meaningful contributions</p>
+              </div>
+            </div>
+
+            <button
+              onClick={handleUserRegistration}
+              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-8 py-3 rounded-lg font-medium text-lg transition-all duration-200"
+            >
+              Create Anonymous Identity
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="max-w-6xl mx-auto p-4">
+          {/* PoH Verification Banner */}
+          {!isPoHVerified && (
+            <div className="bg-orange-500/20 border border-orange-500/50 rounded-lg p-4 mb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold text-orange-300">Complete Proof of Humanity Verification</h3>
+                  <p className="text-orange-200 text-sm">Verify you're human to participate in governance and earn bonus rewards</p>
+                </div>
+                <button
+                  onClick={handlePoHVerification}
+                  className="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg transition-colors"
+                >
+                  Verify Now
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Navigation Tabs */}
+          <div className="flex space-x-1 bg-black/30 backdrop-blur-lg rounded-lg p-1 mb-6">
+            {[
+              { id: 'feed', label: 'Social Feed', icon: MessageCircle },
+              { id: 'governance', label: 'Governance', icon: Vote },
+              { id: 'messages', label: 'Messages', icon: Lock },
+              { id: 'profile', label: 'Profile', icon: Users }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-md transition-all ${
+                  activeTab === tab.id 
+                    ? 'bg-purple-600 text-white' 
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Content Area */}
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              {activeTab === 'feed' && (
+                <div className="space-y-6">
+                  {/* Create Post */}
+                  <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                    <h3 className="text-lg font-semibold mb-4">Share with the Community</h3>
+                    <div className="space-y-4">
+                      <textarea
+                        value={newPostContent}
+                        onChange={(e) => setNewPostContent(e.target.value)}
+                        placeholder="What's on your mind? (Encrypted by default)"
+                        className="w-full bg-black/50 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        rows={3}
+                      />
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center space-x-2 text-sm text-gray-400">
+                          <Lock className="w-4 h-4" />
+                          <span>End-to-end encrypted</span>
+                        </div>
+                        <button
+                          onClick={handleCreatePost}
+                          disabled={!newPostContent.trim()}
+                          className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-lg transition-all"
+                        >
+                          <Send className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Posts Feed */}
+                  <div className="space-y-4">
+                    {posts.map(post => (
+                      <div key={post.id} className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
+                            <div>
+                              <div className="font-medium">@{post.author}</div>
+                              <div className="text-xs text-gray-400">
+                                {post.timestamp.toLocaleTimeString()}
+                                {post.encrypted && (
+                                  <span className="ml-2 inline-flex items-center">
+                                    <Lock className="w-3 h-3 mr-1" />
+                                    Encrypted
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-200 mb-4">{post.content}</p>
+                        
+                        <div className="flex items-center justify-between pt-3 border-t border-gray-700">
+                          <div className="flex items-center space-x-4">
+                            <button 
+                              onClick={() => handleContentModeration(post.id, 'upvote')}
+                              className="flex items-center space-x-1 text-gray-400 hover:text-green-400 transition-colors"
+                            >
+                              <ThumbsUp className="w-4 h-4" />
+                              <span>{post.votes}</span>
+                            </button>
+                            <button className="flex items-center space-x-1 text-gray-400 hover:text-blue-400 transition-colors">
+                              <MessageCircle className="w-4 h-4" />
+                              <span>{post.comments}</span>
+                            </button>
+                          </div>
+                          
+                          {isPoHVerified && (
+                            <button 
+                              onClick={() => handleContentModeration(post.id, 'flag')}
+                              className="text-gray-400 hover:text-red-400 transition-colors"
+                            >
+                              <Flag className="w-4 h-4" />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'governance' && (
+                <div className="space-y-6">
+                  {/* Create Proposal */}
+                  {isPoHVerified && (
+                    <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                      <h3 className="text-lg font-semibold mb-4">Submit Governance Proposal</h3>
+                      <div className="space-y-4">
+                        <input
+                          value={newProposalTitle}
+                          onChange={(e) => setNewProposalTitle(e.target.value)}
+                          placeholder="Proposal title"
+                          className="w-full bg-black/50 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        />
+                        <textarea
+                          value={newProposalDescription}
+                          onChange={(e) => setNewProposalDescription(e.target.value)}
+                          placeholder="Detailed description of your proposal"
+                          className="w-full bg-black/50 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                          rows={4}
+                        />
+                        <button
+                          onClick={handleCreateProposal}
+                          disabled={!newProposalTitle.trim() || !newProposalDescription.trim()}
+                          className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-2 rounded-lg transition-all"
+                        >
+                          Submit Proposal
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Proposals List */}
+                  <div className="space-y-4">
+                    {proposals.map(proposal => (
+                      <div key={proposal.id} className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h4 className="text-lg font-semibold text-purple-300">{proposal.title}</h4>
+                            <p className="text-gray-300 text-sm mb-2">by @{proposal.author}</p>
+                            <p className="text-gray-400">{proposal.description}</p>
+                          </div>
+                          <span className={`px-3 py-1 rounded-full text-xs ${
+                            proposal.status === 'voting' 
+                              ? 'bg-green-500/20 text-green-400' 
+                              : 'bg-yellow-500/20 text-yellow-400'
+                          }`}>
+                            {proposal.status}
+                          </span>
+                        </div>
+
+                        {proposal.status === 'voting' && (
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between text-sm">
+                              <span>For: {proposal.votesFor}</span>
+                              <span>Against: {proposal.votesAgainst}</span>
+                              <span>Credits: {votingCredits}</span>
+                            </div>
+                            
+                            {isPoHVerified && !proposal.userVoted && (
+                              <div className="flex space-x-3">
+                                <button
+                                  onClick={() => handleVote(proposal.id, 'for')}
+                                  disabled={votingCredits <= 0}
+                                  className="flex-1 bg-green-600 hover:bg-green-700 disabled:opacity-50 py-2 rounded-lg transition-colors"
+                                >
+                                  Vote For
+                                </button>
+                                <button
+                                  onClick={() => handleVote(proposal.id, 'against')}
+                                  disabled={votingCredits <= 0}
+                                  className="flex-1 bg-red-600 hover:bg-red-700 disabled:opacity-50 py-2 rounded-lg transition-colors"
+                                >
+                                  Vote Against
+                                </button>
+                              </div>
+                            )}
+                            
+                            {proposal.userVoted && (
+                              <div className="text-center text-green-400 py-2">
+                                ✓ You have voted on this proposal
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'messages' && (
+                <div className="space-y-6">
+                  {/* Send Message */}
+                  <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                    <h3 className="text-lg font-semibold mb-4">Encrypted Messaging</h3>
+                    <div className="space-y-4">
+                      <select
+                        value={selectedRecipient}
+                        onChange={(e) => setSelectedRecipient(e.target.value)}
+                        className="w-full bg-black/50 border border-gray-600 rounded-lg p-3 text-white focus:border-purple-500 focus:outline-none"
+                      >
+                        <option value="">Select recipient...</option>
+                        <option value="mutual_aid_organizer">@mutual_aid_organizer</option>
+                        <option value="privacy_advocate">@privacy_advocate</option>
+                        <option value="anon_activist_42">@anon_activist_42</option>
+                      </select>
+                      <textarea
+                        value={newMessageContent}
+                        onChange={(e) => setNewMessageContent(e.target.value)}
+                        placeholder="Your message (automatically encrypted)"
+                        className="w-full bg-black/50 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        rows={3}
+                      />
+                      <button
+                        onClick={handleSendMessage}
+                        disabled={!newMessageContent.trim() || !selectedRecipient}
+                        className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-lg transition-all"
+                      >
+                        <Send className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Messages */}
+                  <div className="space-y-4">
+                    {messages.map(message => (
+                      <div key={message.id} className="bg-black/30 backdrop-blur-lg rounded-xl p-4 border border-purple-500/30">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-medium">@{message.sender}</span>
+                          <span className="text-xs text-gray-400">{message.timestamp.toLocaleTimeString()}</span>
+                        </div>
+                        <p className="text-gray-300">{message.content}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'profile' && (
+                <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                  <h3 className="text-lg font-semibold mb-6">User Profile</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold">@{currentUser}</h4>
+                        <p className="text-gray-400">Anonymous SovereigNet citizen</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-black/50 rounded-lg p-4">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <Coins className="w-5 h-5 text-yellow-400" />
+                          <span className="font-medium">$SVR Balance</span>
+                        </div>
+                        <div className="text-2xl font-bold text-yellow-400">{userStats.svr}</div>
+                      </div>
+
+                      <div className="bg-black/50 rounded-lg p-4">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <Award className="w-5 h-5 text-green-400" />
+                          <span className="font-medium">Reputation</span>
+                        </div>
+                        <div className="text-2xl font-bold text-green-400">{userStats.reputation}</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-black/50 rounded-lg p-4">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Zap className="w-5 h-5 text-purple-400" />
+                        <span className="font-medium">Participation Score</span>
+                      </div>
+                      <div className="text-2xl font-bold text-purple-400">{userStats.participationScore}</div>
+                      <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
+                        <div 
+                          className="bg-gradient-to-r from-purple-500 to-cyan-500 h-2 rounded-full transition-all duration-500"
+                          style={{ width: `${Math.min((userStats.participationScore / 200) * 100, 100)}%` }}
+                        ></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h5 className="font-medium">Verification Status</h5>
+                      <div className="flex items-center justify-between">
+                        <span>Proof of Humanity</span>
+                        {isPoHVerified ? (
+                          <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">
+                            ✓ Verified
+                          </span>
+                        ) : (
+                          <span className="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm">
+                            Pending
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="space-y-6">
+              {/* Treasury Stats */}
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <h3 className="text-lg font-semibold mb-4">Community Treasury</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Total Fund</span>
+                    <span className="font-medium">12,847 $SVR</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Active Proposals</span>
+                    <span className="font-medium">{proposals.filter(p => p.status === 'voting').length}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Verified Users</span>
+                    <span className="font-medium">1,247</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Tax Rate</span>
+                    <span className="font-medium">3%</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Network Stats */}
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <h3 className="text-lg font-semibold mb-4">Network Status</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Nodes Online</span>
+                    <span className="text-green-400 font-medium">847</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Avg Block Time</span>
+                    <span className="font-medium">2.1s</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Network Health</span>
+                    <span className="text-green-400 font-medium">Excellent</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="bg-black/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
+                <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
+                <div className="space-y-3">
+                  <button className="w-full bg-purple-600 hover:bg-purple-700 py-2 px-4 rounded-lg transition-colors text-left">
+                    View Treasury Proposals
+                  </button>
+                  <button className="w-full bg-cyan-600 hover:bg-cyan-700 py-2 px-4 rounded-lg transition-colors text-left">
+                    Join Moderation Pool
+                  </button>
+                  <button className="w-full bg-green-600 hover:bg-green-700 py-2 px-4 rounded-lg transition-colors text-left">
+                    Stake $SVR Tokens
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SovereigNetMVP;
